@@ -36,7 +36,7 @@ class Node {
   /** To string function */
   override def toString = {
     val tagStr = (tags mkString "/")
-    val c = for (c <- children; l <- c.toString.lines) yield {"  " + l}
+    val c: Vector[String] = for (c <- children; l <- c.toString.linesIterator) yield {"  " + l}
     (tagStr :: c.toList).mkString("\n")
   }
 

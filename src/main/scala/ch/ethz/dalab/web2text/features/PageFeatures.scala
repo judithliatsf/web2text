@@ -26,12 +26,12 @@ case class PageFeatures(
     "\n++++++++++++++++++++",
     "++ Block features ++",
     "++++++++++++++++++++\n",
-    (blockFeatureLabels.toIterator zip blockFeatures.toString.lines)
+    (blockFeatureLabels.toIterator zip blockFeatures.toString.linesIterator)
       map { case (lab, feat) => lab + "  " + feat} mkString "\n",
     "\n++++++++++++++++++++",
     "++ Edge features  ++",
     "++++++++++++++++++++\n",
-    (edgeFeatureLabels.toIterator zip edgeFeatures.toString.lines)
+    (edgeFeatureLabels.toIterator zip edgeFeatures.toString.linesIterator)
       map { case (lab, feat) => lab + "  " + feat} mkString "\n"
   ) mkString "\n"
 
